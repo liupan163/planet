@@ -95,7 +95,7 @@ ignite relayer connect
 对手链在ack确认数据包中将返回是否更新成功，发送链收到确认数据包后更新本地之前存储的SentPost为新的title。
 
 - ignite scaffold packet ibcPost title content --ack postID --module blog
-- ignite scaffold packet updatePost postID title content --ack postID --module blog
+- ignite scaffold packet updatePost postID title content --ack isUpdateOk --module blog
 
 
 4.启动中继器和两条链节点，发送一条post给对手链，发送成功后，确保对手链能查询到该post以及当前链保存了相应的sentPost。获取该post对应的postID，向对手链发送一条updatePost的ibc数据包，更新该post的title和content。发送成功后，查询对手链的post和当前链的sentPost，确保更新成功。
