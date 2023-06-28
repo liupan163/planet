@@ -18,7 +18,7 @@ func (k msgServer) SendIbcPost(goCtx context.Context, msg *types.MsgSendIbcPost)
 
 	packet.Title = msg.Title
 	packet.Content = msg.Content
-	packet.Creator = msg.Creator
+	packet.Creator = msg.Creator // TODO manual add it
 
 	// Transmit the packet
 	_, err := k.TransmitIbcPostPacket(
